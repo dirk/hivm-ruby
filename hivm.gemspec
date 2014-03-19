@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = Hivm::VERSION
   spec.authors       = ["Dirk Gadsden"]
   spec.email         = ["dirk@dirk.to"]
-  spec.summary       = %q{Write a short summary. Required.}
-  spec.description   = %q{Write a longer description. Optional.}
-  spec.homepage      = ""
+  spec.summary       = %q{Interface to the Hivm}
+  spec.description   = %q{Ruby interface to the Hivm virtual machine}
+  spec.homepage      = "https://github.com/dirk/hivm-ruby"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
