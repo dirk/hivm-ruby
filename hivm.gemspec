@@ -4,12 +4,12 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'hivm/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "hivm-ruby"
+  spec.name          = "hivm"
   spec.version       = Hivm::VERSION
   spec.authors       = ["Dirk Gadsden"]
   spec.email         = ["dirk@dirk.to"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.summary       = %q{Write a short summary. Required.}
+  spec.description   = %q{Write a longer description. Optional.}
   spec.homepage      = ""
   spec.license       = "MIT"
 
@@ -17,6 +17,8 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
+
+  spec.add_dependency "ffi", "~> 1.9.3"
 
   spec.add_development_dependency "bundler", "~> 1.5"
   spec.add_development_dependency "rake"

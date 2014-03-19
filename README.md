@@ -6,7 +6,7 @@ TODO: Write a gem description
 
 Add this line to your application's Gemfile:
 
-    gem 'hivm-ruby'
+    gem 'hivm'
 
 And then execute:
 
@@ -14,7 +14,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install hivm-ruby
+    $ gem install hivm
 
 ## Usage
 
