@@ -1,4 +1,4 @@
-# Hivm::Ruby
+# hivm-ruby
 
 TODO: Write a gem description
 

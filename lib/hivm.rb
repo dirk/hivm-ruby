@@ -31,10 +31,10 @@ module Hivm
   attach_function :hvm_gen_callprimitive, [:pointer, :uchar, :uchar], :void
   attach_function :hvm_gen_return, [:pointer, :uchar], :void
 
-  attach_function :hvm_gen_getlocal, [:pointer, :uchar, :uint], :void
-  attach_function :hvm_gen_setlocal, [:pointer, :uint, :uchar], :void
-  attach_function :hvm_gen_getglobal, [:pointer, :uchar, :uint], :void
-  attach_function :hvm_gen_setglobal, [:pointer, :uint, :uchar], :void
+  attach_function :hvm_gen_getlocal,  [:pointer, :uchar, :uchar], :void
+  attach_function :hvm_gen_setlocal,  [:pointer, :uchar, :uchar], :void
+  attach_function :hvm_gen_getglobal, [:pointer, :uchar, :uchar], :void
+  attach_function :hvm_gen_setglobal, [:pointer, :uchar, :uchar], :void
   
   attach_function :hvm_gen_litinteger, [:pointer, :uchar, :ulong_long], :void
   

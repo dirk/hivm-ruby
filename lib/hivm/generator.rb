@@ -71,18 +71,18 @@ module Hivm
       Hivm.hvm_gen_sub(self.to_ptr, name)
     end
 
-    def getlocal reg, sym_id
-      Hivm.hvm_gen_getlocal(self.to_ptr, reg, sym_id)
+    def getlocal val_reg, sym_reg
+      Hivm.hvm_gen_getlocal(self.to_ptr, val_reg, sym_reg)
     end
-    def setlocal sym_id, reg
-      Hivm.hvm_gen_setlocal(self.to_ptr, sym_id, reg)
+    def setlocal sym_reg, val_reg
+      Hivm.hvm_gen_setlocal(self.to_ptr, sym_reg, val_reg)
     end
 
-    def getglobal reg, sym_id
-      Hivm.hvm_gen_getglobal(self.to_ptr, reg, sym_id)
+    def getglobal val_reg, sym_reg
+      Hivm.hvm_gen_getglobal(self.to_ptr, val_reg, sym_reg)
     end
-    def setglobal sym_id, reg
-      Hivm.hvm_gen_setglobal(self.to_ptr, sym_id, reg)
+    def setglobal sym_reg, val_reg
+      Hivm.hvm_gen_setglobal(self.to_ptr, sym_reg, val_reg)
     end
 
     def litinteger reg, int
