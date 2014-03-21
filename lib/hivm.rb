@@ -30,6 +30,7 @@ module Hivm
   attach_function :hvm_gen_callsymbolic,  [:pointer, :uchar, :uchar], :void
   attach_function :hvm_gen_callprimitive, [:pointer, :uchar, :uchar], :void
   attach_function :hvm_gen_return, [:pointer, :uchar], :void
+  attach_function :hvm_gen_move, [:pointer, :uchar, :uchar], :void
 
   attach_function :hvm_gen_getlocal,  [:pointer, :uchar, :uchar], :void
   attach_function :hvm_gen_setlocal,  [:pointer, :uchar, :uchar], :void
@@ -41,7 +42,13 @@ module Hivm
   attach_function :hvm_gen_label, [:pointer, :string], :void
   attach_function :hvm_gen_goto_label, [:pointer, :string], :void
   attach_function :hvm_gen_sub, [:pointer, :string], :void
+  attach_function :hvm_gen_call_sub, [:pointer, :string, :uchar], :void
   
+  attach_function :hvm_gen_structnew, [:pointer, :uchar], :void
+  attach_function :hvm_gen_structget, [:pointer, :uchar, :uchar, :uchar], :void
+  attach_function :hvm_gen_structset, [:pointer, :uchar, :uchar, :uchar], :void
+  
+  attach_function :hvm_gen_push_block, [:pointer, :pointer], :void
   
   # Chunk methods
   attach_function :hvm_chunk_disassemble, [:pointer], :void
@@ -53,6 +60,7 @@ module Hivm
   
   attach_function :hvm_vm_reg_gen, [:uchar], :uchar
   attach_function :hvm_vm_reg_arg, [:uchar], :uchar
+  attach_function :hvm_vm_reg_param, [:uchar], :uchar
   attach_function :hvm_vm_reg_null, [], :uchar
   
   def self.null_register; hvm_vm_reg_null; end
@@ -61,5 +69,8 @@ module Hivm
   end
   def self.arg_register i
     hvm_vm_reg_arg i
+  end
+  def self.param_register i
+    hvm_vm_reg_param i
   end
 end

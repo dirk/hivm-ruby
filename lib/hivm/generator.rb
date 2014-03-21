@@ -45,7 +45,7 @@ module Hivm
     def callprimitive sym, ret
       Hivm.hvm_gen_callprimitive(self.to_ptr, sym, ret)
     end
-    def ret reg
+    def return reg
       Hivm.hvm_gen_return(self.to_ptr, reg)
     end
     def goto dest
@@ -70,6 +70,9 @@ module Hivm
     def sub name
       Hivm.hvm_gen_sub(self.to_ptr, name)
     end
+    def call_sub name, ret
+      Hivm.hvm_gen_call_sub self.to_ptr, name, ret
+    end
 
     def getlocal val_reg, sym_reg
       Hivm.hvm_gen_getlocal(self.to_ptr, val_reg, sym_reg)
@@ -85,8 +88,26 @@ module Hivm
       Hivm.hvm_gen_setglobal(self.to_ptr, sym_reg, val_reg)
     end
 
+    def structnew reg
+      Hivm.hvm_gen_structnew(self.to_ptr, reg)
+    end
+    def structget reg, struct, key
+      Hivm.hvm_gen_structget(self.to_ptr, reg, struct, key)
+    end
+    def structset struct, key, val
+      Hivm.hvm_gen_structset(self.to_ptr, struct, key, val)
+    end
+
     def litinteger reg, int
       Hivm.hvm_gen_litinteger(self.to_ptr, reg, int)
+    end
+
+    def move dest, src
+      Hivm.hvm_gen_move(self.to_ptr, dest, src)
+    end
+
+    def push_block push
+      Hivm.hvm_gen_push_block self.to_ptr, push.to_ptr
     end
 
   end# Generator
