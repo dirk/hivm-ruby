@@ -4,7 +4,10 @@ module Hivm
            :top,         :pointer,
            :stack,       :pointer,
            :stack_depth, :uint,
-           :ip,          :ulong_long
+           :ip,          :ulong_long,
+           :program,     :pointer,
+           :program_capacity, :ulong_long,
+           :program_size, :ulong_long
     
     def initialize
       vm = Hivm.hvm_new_vm()

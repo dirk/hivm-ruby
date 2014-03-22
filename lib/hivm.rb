@@ -63,6 +63,8 @@ module Hivm
   attach_function :hvm_vm_reg_param, [:uchar], :uchar
   attach_function :hvm_vm_reg_null, [], :uchar
   
+  attach_function :hvm_print_data, [:pointer, :ulong_long], :void
+  
   def self.null_register; hvm_vm_reg_null; end
   def self.general_register i
     hvm_vm_reg_gen i
