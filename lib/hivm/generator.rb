@@ -17,6 +17,9 @@ module Hivm
     def method_missing symbol, *args
       block.send symbol, *args
     end
+    def set_file file
+      Hivm.hvm_gen_set_file(self.to_ptr, file)
+    end
   end
 
   class Block < FFI::Struct
@@ -108,6 +111,13 @@ module Hivm
 
     def push_block push
       Hivm.hvm_gen_push_block self.to_ptr, push.to_ptr
+    end
+    
+    def debug_entry line, name
+      Hivm.hvm_gen_set_debug_entry self.to_ptr, line, name
+    end
+    def debug_line line
+      Hivm.hvm_gen_set_debug_line self.to_ptr, line
     end
 
   end# Generator

@@ -14,6 +14,7 @@ module Hivm
   end
 
   attach_function :hvm_new_gen, [], :pointer
+  attach_function :hvm_gen_set_file, [:pointer, :string], :void
   attach_function :hvm_new_item_block, [], :pointer
   # Generator methods
   attach_function :hvm_gen_set_string, [:pointer, :uchar, :string], :void
@@ -64,6 +65,9 @@ module Hivm
   attach_function :hvm_vm_reg_null, [], :uchar
   
   attach_function :hvm_print_data, [:pointer, :ulong_long], :void
+  
+  attach_function :hvm_gen_set_debug_line, [:pointer, :ulong_long], :void
+  attach_function :hvm_gen_set_debug_entry, [:pointer, :ulong_long, :string], :void
   
   def self.null_register; hvm_vm_reg_null; end
   def self.general_register i
