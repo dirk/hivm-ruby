@@ -4,6 +4,12 @@ module Hivm
            :top,         :pointer,
            :stack,       :pointer,
            :stack_depth, :uint,
+
+           :exception, :pointer,
+           :debug_entries, :pointer,
+           :debug_entries_capacity, :ulong_long,
+           :debug_entries_size, :ulong_long,
+
            :ip,          :ulong_long,
            :program,     :pointer,
            :program_capacity, :ulong_long,
