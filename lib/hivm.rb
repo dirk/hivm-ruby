@@ -68,6 +68,9 @@ module Hivm
   
   attach_function :hvm_gen_set_debug_line, [:pointer, :ulong_long], :void
   attach_function :hvm_gen_set_debug_entry, [:pointer, :ulong_long, :string], :void
+  attach_function :hvm_gen_set_debug_flags, [:pointer, :uchar], :void
+  
+  attach_variable :DEBUG_FLAG_HIDE_BACKTRACE, :HVM_DEBUG_FLAG_HIDE_BACKTRACE, :uchar
   
   def self.null_register; hvm_vm_reg_null; end
   def self.general_register i

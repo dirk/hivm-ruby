@@ -119,6 +119,9 @@ module Hivm
     def debug_line line
       Hivm.hvm_gen_set_debug_line self.to_ptr, line
     end
+    def debug_flags flags
+      Hivm.hvm_gen_set_debug_flags self.to_ptr, flags
+    end
 
   end# Generator
 end# Hivm
