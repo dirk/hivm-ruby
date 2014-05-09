@@ -101,6 +101,16 @@ module Hivm
       Hivm.hvm_gen_structset(self.to_ptr, struct, key, val)
     end
 
+    def arraynew arr, len
+      Hivm.hvm_gen_arraynew self.to_ptr, arr, len
+    end
+    def arrayset arr, idx, val
+      Hivm.hvm_gen_arrayset self.to_ptr, arr, idx, val
+    end
+    def arrayget val, arr, idx
+      Hivm.hvm_gen_arrayget self.to_ptr, val, arr, idx
+    end
+
     def litinteger reg, int
       Hivm.hvm_gen_litinteger(self.to_ptr, reg, int)
     end
@@ -112,7 +122,25 @@ module Hivm
     def push_block push
       Hivm.hvm_gen_push_block self.to_ptr, push.to_ptr
     end
-    
+
+    def add a, b, c
+      Hivm.hvm_gen_add self.to_ptr, a, b, c
+    end
+
+    def eq a, b, c
+      Hivm.hvm_gen_eq self.to_ptr, a, b, c
+    end
+    def lt a, b, c
+      Hivm.hvm_gen_lt self.to_ptr, a, b, c
+    end
+    def gt a, b, c
+      Hivm.hvm_gen_gt self.to_ptr, a, b, c
+    end
+
+    def if_label reg, label
+      Hivm.hvm_gen_if_label self.to_ptr, reg, label
+    end
+
     def debug_entry line, name
       Hivm.hvm_gen_set_debug_entry self.to_ptr, line, name
     end

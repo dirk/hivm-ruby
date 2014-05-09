@@ -48,9 +48,19 @@ module Hivm
   attach_function :hvm_gen_structnew, [:pointer, :uchar], :void
   attach_function :hvm_gen_structget, [:pointer, :uchar, :uchar, :uchar], :void
   attach_function :hvm_gen_structset, [:pointer, :uchar, :uchar, :uchar], :void
-  
+
+  attach_function :hvm_gen_arraynew, [:pointer, :uchar, :uchar], :void
+  attach_function :hvm_gen_arrayset, [:pointer, :uchar, :uchar, :uchar], :void
+  attach_function :hvm_gen_arrayget, [:pointer, :uchar, :uchar, :uchar], :void
+
   attach_function :hvm_gen_push_block, [:pointer, :pointer], :void
-  
+
+  attach_function :hvm_gen_add, [:pointer, :uchar, :uchar, :uchar], :void
+  attach_function :hvm_gen_eq, [:pointer, :uchar, :uchar, :uchar], :void
+  attach_function :hvm_gen_lt, [:pointer, :uchar, :uchar, :uchar], :void
+  attach_function :hvm_gen_gt, [:pointer, :uchar, :uchar, :uchar], :void
+  attach_function :hvm_gen_if_label, [:pointer, :uchar, :string], :void
+
   # Chunk methods
   attach_function :hvm_chunk_disassemble, [:pointer], :void
   
@@ -63,7 +73,7 @@ module Hivm
   attach_function :hvm_vm_reg_arg, [:uchar], :uchar
   attach_function :hvm_vm_reg_param, [:uchar], :uchar
   attach_function :hvm_vm_reg_null, [], :uchar
-  
+
   attach_function :hvm_print_data, [:pointer, :ulong_long], :void
   
   attach_function :hvm_gen_set_debug_line, [:pointer, :ulong_long], :void
