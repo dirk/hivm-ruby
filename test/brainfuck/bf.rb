@@ -4,7 +4,7 @@ require 'rubygems'
 # Development load-paths
 $:.unshift File.join(File.dirname(__FILE__), "..", '..', "..", "hivm-ruby", "lib")
 $:.unshift File.join(File.dirname(__FILE__), '..', '..', 'lib')
-require 'hijinks'
+require 'hivm'
 
 
 class Parser
